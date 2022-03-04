@@ -1,0 +1,103 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Usuarios</span>
+        <div class="example-spacer"></div>
+        <button mat-raised-button color="primary" routerLink="/dashboard/crear-usuario">Agregar</button>
+    </mat-toolbar>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z3" >
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- LastName Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Apellido</th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+    
+      <!-- BirthPlace Column -->
+      <ng-container matColumnDef="birthPlace">
+        <th mat-header-cell *matHeaderCellDef>Lugar de nacimiento</th>
+        <td mat-cell *matCellDef="let element"> {{element.birthPlace}} </td>
+      </ng-container>
+    
+      <!-- BirthDate Column -->
+      <ng-container matColumnDef="birthDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha de nacimiento</th>
+        <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+      </ng-container>
+    
+          <!-- WorkPlace Column -->
+          <ng-container matColumnDef="workPlace">
+            <th mat-header-cell *matHeaderCellDef>Lugar de trabajo</th>
+            <td mat-cell *matCellDef="let element"> {{element.workPlace}} </td>
+          </ng-container>
+
+                <!-- FormerBossName Column -->
+                <ng-container matColumnDef="formerBossName">
+                  <th mat-header-cell *matHeaderCellDef>Nombre Jefe Anterior</th>
+                  <td mat-cell *matCellDef="let element"> {{element.formerBossName}} </td>
+                </ng-container>
+      
+                    <!-- FormerBossPhone Column -->
+                    <ng-container matColumnDef="formerBossPhone">
+                      <th mat-header-cell *matHeaderCellDef>Teléfono Jefe Anterior</th>
+                      <td mat-cell *matCellDef="let element"> {{element.formerBossPhone}} </td>
+                    </ng-container>
+
+                          
+                    <!-- StartDate Column -->
+                    <ng-container matColumnDef="startDate">
+                      <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
+                      <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+                    </ng-container>
+
+                        <!-- FinishDate Column -->
+                        <ng-container matColumnDef="finishDate">
+                          <th mat-header-cell *matHeaderCellDef>Fecha de finalización</th>
+                          <td mat-cell *matCellDef="let element"> {{element.finishDate}} </td>
+                        </ng-container>
+
+       <!-- actions Column -->
+       <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element; let i = index">
+              <a class="pointer" matTooltip="Ver usuario">
+                <mat-icon>search</mat-icon>
+              </a>
+              <a class="pointer" matTooltip="Editar usuario">
+                <mat-icon>edit</mat-icon>
+              </a>
+              <a class="pointer" (click)="deleteUser(i)"  matTooltip="Eliminar usuario">
+                <mat-icon>delete</mat-icon>
+              </a>
+           </td>
+      </ng-container>  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+</mat-paginator>
+</div>
+

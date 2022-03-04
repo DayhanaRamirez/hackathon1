@@ -1,0 +1,16 @@
+<div class="body">
+    <div class="login">
+        <mat-spinner *ngIf="loading" diameter="50" class="spinner"></mat-spinner>
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="enter()">
+            <img  class="logo" src="./assets/img/leanTech.svg" alt="leanTech logo">
+            <mat-form-field class="width-login" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput autocomplete="off" formControlName="user">
+            </mat-form-field>
+            <mat-form-field class="width-login" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password">
+            </mat-form-field>
+            <button type="submit" class="width-login button" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
+        </form>
+</div>

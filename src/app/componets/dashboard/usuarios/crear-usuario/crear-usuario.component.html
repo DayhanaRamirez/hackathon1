@@ -1,0 +1,78 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Crear usuario</span>
+    </mat-toolbar>
+    <mat-card>
+        <form [formGroup]="form" (ngSubmit)="addUser()">
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                    <mat-form-field class="user-width">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput formControlName="user">
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan] = "3" [rowspan] = "10">
+                    <img src="./assets/img/man.png" alt="Usuarios">
+                </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput formControlName="name">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Apellido</mat-label>
+                            <input matInput formControlName="lastName">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Lugar de nacimiento</mat-label>
+                            <input matInput formControlName="birthPlace">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Fecha de nacimiento</mat-label>
+                            <input matInput formControlName="birthDate">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Lugar de trabajo</mat-label>
+                            <input matInput formControlName="workPlace">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Nombre jefe anterior</mat-label>
+                            <input matInput formControlName="formerBossName">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Teléfono jefe anterior</mat-label>
+                            <input matInput formControlName="formerBossPhone">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Fecha de inicio</mat-label>
+                            <input matInput formControlName="startDate ">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <mat-form-field class="user-width">
+                            <mat-label>Fecha de finalización</mat-label>
+                            <input matInput formControlName="finishDate">
+                          </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile [colspan] = "1" [rowspan] = "1">
+                        <button mat-raised-button color="primary" routerLink="/dashboard/usuarios">Volver</button>
+                        <button type="submit" mat-raised-button style="margin-right: 20px;" color="primary">Aceptar</button>
+                    </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>
